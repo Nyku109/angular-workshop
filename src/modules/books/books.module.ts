@@ -3,9 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './../../app/material.module';
+
+import { reducers } from './reducers';
+import { BookEffects } from './effects/books.effect';
 
 import * as fromContainers from './containers';
 import * as fromComponents from './components';
@@ -37,6 +42,8 @@ export const ROUTES: Routes = [
     RouterModule.forChild(ROUTES),
     MaterialModule,
     FlexLayoutModule,
+    StoreModule.forFeature('booksFeatureState', reducers),
+    EffectsModule.forFeature([BookEffects]),
   ],
   exports: [...fromContainers.containers],
   declarations: [
