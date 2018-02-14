@@ -10,11 +10,11 @@ import { storeFreeze } from 'ngrx-store-freeze';
 import * as fromBooks from '../../modules/books/reducers/books.reducer';
 
 export interface State {
-  movies: fromBooks.State;
+  books: fromBooks.State;
 }
 
 export const reducers: ActionReducerMap<State> = {
-  movies: fromBooks.reducer
+  books: fromBooks.reducer
 };
 
 export function logger(reducer: ActionReducer<State>): ActionReducer<State> {
