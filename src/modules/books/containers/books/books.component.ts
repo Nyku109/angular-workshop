@@ -10,6 +10,7 @@ import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/merge';
 
 import { BooksService } from './../../services/books.service';
+import { BookActionTypes } from '../../actions/books.action'
 import { Book } from '../../models/book.model';
 import * as fromBooks from '../../reducers';
 import * as books from '../../actions/books.action';
